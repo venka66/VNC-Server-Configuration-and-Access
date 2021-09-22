@@ -51,12 +51,12 @@ VNC (Virtual Network Computing) is a visual connection system that enables you t
    - xrdb $HOME/.Xresources: This line tells the VNC server to read the .Xresources file where users can make changes on the graphical desktop general settings like fonts, color, etc.
    - startxfce4 &: This line tells VNC which Desktop Environment to launch. startxfce4 is a script responsible for starting an Xfce session.
 
-- Make the startup file executable
+   - Make the startup file executable
 
          $ chmod +x ~/.vnc/xstartup
 
-- Restart the VNC server for the changes to take effect
+   - Restart the VNC server for the changes to take effect
 
          $ vncserver -localhost no :1
 
-- The above command launches a VNC server instance on port 5901. We added -localhost no to be able to access the server via VNC from the outside.
+   - The above command launches a VNC server instance on port 5901. We added -localhost no to be able to access the server via VNC from the outside.
