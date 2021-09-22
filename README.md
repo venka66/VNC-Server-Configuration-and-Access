@@ -13,16 +13,12 @@ VNC (Virtual Network Computing) is a visual connection system that enables you t
 * Step 2: Install VNC server 
    - After successfully installing the XFCE desktop environment, we can proceed to install the VNC server. There are several VNC servers available for Linux today. They include TightVNC, x11VNC, and TigerVNC. [TigerVNC](https://tigervnc.org/) server is the most stable across all desktop environments, so let's install TigerVNC on Ubuntu
 
-         ```
          $ sudo apt install tigervnc-standalone-server
-         ```
-
+  
 * Step 3: Configure VNC settings 
    - After a successful installation, we need to perform the initial VNC configuration, set up a VNC access password and initialize the VNC server. Execute the command below to initialize the VNC server instance and set up a password. The password must be between 6-8 characters long. The system will automatically truncate any password loger than eight characters.
 
-         ```
          $ vncserver
-         ```
 
    - After setting up the password, you will get a prompt to set a View-Only password. That means anybody who accesses the VNC server with a view-only password will not be able to VNC desktop with either Mouse or Keyboard. We won’t set up a view-only password. I will just type N and hit Enter.
 
@@ -31,33 +27,25 @@ VNC (Virtual Network Computing) is a visual connection system that enables you t
 
    - If you ever want to change the VNC password or the view-only password, execute the command below:
 
-         ```
          $ vncpasswd
-         ```
 
 * Step 4: Configure VNC server to load graphical interface of our choosing
 
    - One main goal is telling VNC which Desktop Environment to connect and use – in this case, XFCE. To get started, let’s kill the running VNC instance that we launched in Step 2 above running on port 5901. Execute the command below:
 
-         ```
          $ vncserver -kill :1
-         ```
 
    - If another instance were running on another port, say 5902 or 5903, we would execute the commands vcnserver -kill :2 and vncserver -kill :3, respectively.
 
    - To configure VNC, we will need to create a file called xstartup file in the .vnc folder under the home directory (~/.vnc/xstartup). This is where we’ll configure what desktop environment we want the VNC server to use.
 
-         ```
          $ nano ~/.vnc/xstartup
-         ```
 
    - Add the below lines
 
-         ```
           #!/bin/sh
           xrdb $HOME/.Xresources
           startxfce4 &
-         ```
 
    - #!/bin/sh: This line, commonly referred to as shebang, tells the system which interpreter we will be using. In this case, it’s the bash interpreter. Other Linux shells include Almquist shell, KornShell, etc.
    - xrdb $HOME/.Xresources: This line tells the VNC server to read the .Xresources file where users can make changes on the graphical desktop general settings like fonts, color, etc.
@@ -65,14 +53,10 @@ VNC (Virtual Network Computing) is a visual connection system that enables you t
 
 - Make the startup file executable
 
-         ```
          $ chmod +x ~/.vnc/xstartup
-         ```
 
 - Restart the VNC server for the changes to take effect
 
-         ```
          $ vncserver -localhost no :1
-         ```
 
 - The above command launches a VNC server instance on port 5901. We added -localhost no to be able to access the server via VNC from the outside.
