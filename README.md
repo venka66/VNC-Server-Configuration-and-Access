@@ -70,3 +70,5 @@ This section details installing and configuring the VNC Server on an Ubuntu 20.0
          $ /sbin/iptables -I INPUT 1 -p TCP --dport 5901 -j ACCEPT
          $ iptables save
 
+## VNC Client Connection ##
+* Launch your VNC Client (or VNC Viewer) application on your local machine and connect to the VNC server using `server_ip_address:1` or `server_ip_address:5901`.
