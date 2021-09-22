@@ -15,7 +15,7 @@ You will see a prompt to select a display manager for your newly installed XFCE 
 
 * Step 2: Install VNC server 
 After successfully installing the XFCE desktop environment, we can proceed to install the VNC server. There are several VNC servers available for Linux today. They include TightVNC, x11VNC, and TigerVNC.
-[TigerVNC] (https://tigervnc.org/) server is the most stable across all desktop environments, so let's install TigerVNC on Ubuntu
+[TigerVNC](https://tigervnc.org/) server is the most stable across all desktop environments, so let's install TigerVNC on Ubuntu
 
 ```
 $ sudo apt install tigervnc-standalone-server
