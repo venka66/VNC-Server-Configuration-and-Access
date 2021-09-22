@@ -2,7 +2,7 @@
 VNC [(Virtual Network Computing)](https://en.wikipedia.org/wiki/Virtual_Network_Computing) is a visual connection system that enables you to interact with the graphical desktop environment of a remote PC using a mouse and a keyboard.
 If you have worked with Microsoft Remote Desktop Protocol (RDP) before, think of VNC as an open-source alternative.
 VNC is quite a lifesaver for many who are not comfortable working from the command-line and need to manage files, install software and configure settings on a remote server.
-In this tutorial we will go step-by-step through installing and configuring the VNC Server on an Ubuntu 20.04 machine, and we’ll look at how we can connect to it via VNC desktop clie
+This section details installing and configuring the VNC Server on an Ubuntu 20.04 machine, and we’ll look at how we can connect to it via VNC desktop client.
 
 ## VNC Server Installation ##
 * Step 1: Install a Desktop Environment
