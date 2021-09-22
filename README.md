@@ -3,14 +3,14 @@ VNC (Virtual Network Computing) is a visual connection system that enables you t
 
 ## VNC Server Installation ##
 * Step 1: Install a Desktop Environment
-- For this particular instance, we will install the [XFCE](https://xfce.org/) desktop environment. It is fast, stable, and easy to use.
+   - For this particular instance, we will install the [XFCE](https://xfce.org/) desktop environment. It is fast, stable, and easy to use.
 
 ```
 $ sudo apt update 
 $ sudo apt install xfce4 xfce4-goodies
 ```
 
-- xfce4-goodies is an additional package for XFCE Desktop Environment, which brings a lot more advanced enhancement. You will see a prompt to select a display manager for your newly installed XFCE Desktop Environment during the installation. Select any display manager and press Enter.
+  - xfce4-goodies is an additional package for XFCE Desktop Environment, which brings a lot more advanced enhancement. You will see a prompt to select a display manager for your newly installed XFCE Desktop Environment during the installation. Select any display manager and press Enter.
 
 * Step 2: Install VNC server 
 - After successfully installing the XFCE desktop environment, we can proceed to install the VNC server. There are several VNC servers available for Linux today. They include TightVNC, x11VNC, and TigerVNC. [TigerVNC](https://tigervnc.org/) server is the most stable across all desktop environments, so let's install TigerVNC on Ubuntu
