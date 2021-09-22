@@ -50,9 +50,9 @@ This section details installing and configuring the VNC Server on an Ubuntu 20.0
           xrdb $HOME/.Xresources
           startxfce4 &
 
-   - `#!/bin/sh`: This line, commonly referred to as shebang, tells the system which interpreter we will be using. In this case, it’s the bash interpreter. Other Linux shells include Almquist shell, KornShell, etc.
-   - `xrdb $HOME/.Xresources`: This line tells the VNC server to read the .Xresources file where users can make changes on the graphical desktop general settings like fonts, color, etc.
-   - `startxfce4 &`: This line tells VNC which Desktop Environment to launch. startxfce4 is a script responsible for starting an Xfce session.
+      - `#!/bin/sh`: This line, commonly referred to as shebang, tells the system which interpreter we will be using. In this case, it’s the bash interpreter. Other Linux shells include Almquist shell, KornShell, etc.
+      - `xrdb $HOME/.Xresources`: This line tells the VNC server to read the .Xresources file where users can make changes on the graphical desktop general settings like fonts, color, etc.
+      - `startxfce4 &`: This line tells VNC which Desktop Environment to launch. startxfce4 is a script responsible for starting an Xfce session.
 
    - Make the startup file executable
 
