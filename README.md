@@ -3,39 +3,35 @@ VNC (Virtual Network Computing) is a visual connection system that enables you t
 
 ## VNC Server Installation ##
 * Step 1: Install a Desktop Environment
-  For this particular instance, we will install the [XFCE](https://xfce.org/) desktop environment. It is fast, stable, and easy to use.
+- For this particular instance, we will install the [XFCE](https://xfce.org/) desktop environment. It is fast, stable, and easy to use.
 
 ```
 $ sudo apt update 
 $ sudo apt install xfce4 xfce4-goodies
 ```
 
-xfce4-goodies is an additional package for XFCE Desktop Environment, which brings a lot more advanced enhancement.
-You will see a prompt to select a display manager for your newly installed XFCE Desktop Environment during the installation. Select any display manager and press Enter.
+- xfce4-goodies is an additional package for XFCE Desktop Environment, which brings a lot more advanced enhancement. You will see a prompt to select a display manager for your newly installed XFCE Desktop Environment during the installation. Select any display manager and press Enter.
 
 * Step 2: Install VNC server 
-After successfully installing the XFCE desktop environment, we can proceed to install the VNC server. There are several VNC servers available for Linux today. They include TightVNC, x11VNC, and TigerVNC.
-[TigerVNC](https://tigervnc.org/) server is the most stable across all desktop environments, so let's install TigerVNC on Ubuntu
+- After successfully installing the XFCE desktop environment, we can proceed to install the VNC server. There are several VNC servers available for Linux today. They include TightVNC, x11VNC, and TigerVNC. [TigerVNC](https://tigervnc.org/) server is the most stable across all desktop environments, so let's install TigerVNC on Ubuntu
 
 ```
 $ sudo apt install tigervnc-standalone-server
 ```
 
 * Step 3: Configure VNC settings 
-After a successful installation, we need to perform the initial VNC configuration, set up a VNC access password and initialize the VNC server.
-Execute the command below to initialize the VNC server instance and set up a password. The password must be between 6-8 characters long. The system will automatically truncate any password loger than eight characters.
+- After a successful installation, we need to perform the initial VNC configuration, set up a VNC access password and initialize the VNC server. Execute the command below to initialize the VNC server instance and set up a password. The password must be between 6-8 characters long. The system will automatically truncate any password loger than eight characters.
 
 ```
 $ vncserver
 ```
 
-After setting up the password, you will get a prompt to set a View-Only password. That means anybody who accesses the VNC server with a view-only password will not be able to VNC desktop with either Mouse or Keyboard. We won’t set up a view-only password. I will just type N and hit Enter.
+- After setting up the password, you will get a prompt to set a View-Only password. That means anybody who accesses the VNC server with a view-only password will not be able to VNC desktop with either Mouse or Keyboard. We won’t set up a view-only password. I will just type N and hit Enter.
 
-We can see this process lists the connection information for our VNC server from the message above. Additionally, it started the VNC server at port 5901, which is the display port. This port (5901) is referred to as :1.
-If you create additional VNC server instances, they will be presented as port 5902 as :2, port 5903 as :3, and so on.
-Up to this point, our VNC server is up and running. However, it cannot give us access to a graphical interface since it’s not configured to launch our XFCE desktop environment;
+- We can see this process lists the connection information for our VNC server from the message above. Additionally, it started the VNC server at port 5901, which is the display port. This port (5901) is referred to as :1. If you create additional VNC server instances, they will be presented as port 5902 as :2, port 5903 as :3, and so on.
+- Up to this point, our VNC server is up and running. However, it cannot give us access to a graphical interface since it’s not configured to launch our XFCE desktop environment.
 
-If you ever want to change the VNC password or the view-only password, execute the command below:
+- If you ever want to change the VNC password or the view-only password, execute the command below:
 
 ```
 $ vncpasswd
