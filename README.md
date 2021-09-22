@@ -38,7 +38,7 @@ This section details installing and configuring the VNC Server on an Ubuntu 20.0
 
          $ vncserver -kill :1
 
-   - If another instance were running on another port, say 5902 or 5903, we would execute the commands vcnserver -kill :2 and vncserver -kill :3, respectively.
+   - If another instance were running on another port, say 5902 or 5903, we would execute the commands `vcnserver -kill :2` and `vncserver -kill :3`, respectively.
 
    - To configure VNC, we will need to create a file called xstartup file in the .vnc folder under the home directory (`~/.vnc/xstartup`). This is where we’ll configure what desktop environment we want the VNC server to use.
 
@@ -63,3 +63,10 @@ This section details installing and configuring the VNC Server on an Ubuntu 20.0
          $ vncserver -localhost no :1
 
    - The above command launches a VNC server instance on port `5901`. We added `-localhost no` to be able to access the server via VNC from the outside.
+
+* Step 5: Ensure VNC server port is open for the client connection
+   - We must make the `5901` port that we configured earlier for the VNC server use, is open in our firewall. Leaving this unconfigured might result in a [connection timed out error](https://bobcares.com/blog/vnc-timed-out-waiting-for-the-response-from-the-host-computer/) during the client connection attempt.
+
+         $ /sbin/iptables -I INPUT 1 -p TCP --dport 5901 -j ACCEPT
+         $ iptables save
+
